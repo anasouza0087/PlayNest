@@ -1,0 +1,53 @@
+/* Reset básico para remover margens, paddings e garantir consistência */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove estilos de lista padrão */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove decoração de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Define uma base consistente para fontes */
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #0d1b2a; /* Fundo escuro para combinar com Neon Cyberpunk */
+  color: #fff; /* Texto branco para contraste */
+}
+
+/* Ajusta imagens para não ultrapassarem seus containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove estilos padrão de botões */
+button,
+input,
+textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Remove estilos padrão do botão */
+button {
+  cursor: pointer;
+}
+
+/* Melhorias de acessibilidade */
+[hidden] {
+  display: none;
+}
