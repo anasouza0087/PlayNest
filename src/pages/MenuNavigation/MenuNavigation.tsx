@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Drawer, IconButton, Typography } from "@mui/material";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "../../styles/style.css";
@@ -48,7 +49,9 @@ export const MenuNavigation = () => {
           >
             <img src="/images/memory-game.png" className="image" />
             {openCloseDrawer && (
-              <Typography fontWeight="bold">Jogo da Memória</Typography>
+              <Typography fontWeight="bold">
+                <Link to="/Memory">Jogo da Memória</Link>
+              </Typography>
             )}
           </div>
           <div
@@ -62,7 +65,9 @@ export const MenuNavigation = () => {
           >
             <img src="/images/hangman.png" className="image" />
             {openCloseDrawer && (
-              <Typography fontWeight="bold">Jogo da Forca</Typography>
+              <Typography fontWeight="bold">
+                <Link to="/Hangman">Jogo da Forca</Link>
+              </Typography>
             )}
           </div>
           <div
@@ -76,7 +81,9 @@ export const MenuNavigation = () => {
           >
             <img src="/images/tic-tac-toe.png" className="image" />
             {openCloseDrawer && (
-              <Typography fontWeight="bold">Jogo da Velha</Typography>
+              <Typography fontWeight="bold">
+                <Link to="/TicTacToe">Jogo da Velha</Link>
+              </Typography>
             )}
           </div>
         </div>
