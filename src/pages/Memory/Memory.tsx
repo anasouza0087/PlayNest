@@ -8,19 +8,19 @@ export const Memory = () => {
 
   useEffect(() => {
     if (revealCards) {
-      setTimer(3); // Start countdown
+      setTimer(3);
       const interval = setInterval(() => {
         setTimer((prev) => {
           if (prev === 1) {
-            clearInterval(interval); // Stop the countdown
-            setRevealCards(false); // Reset reveal state
-            return null; // Hide countdown
+            clearInterval(interval);
+            setRevealCards(false);
+            return null;
           }
           return prev! - 1;
         });
       }, 1000);
 
-      return () => clearInterval(interval); // Cleanup when unmounting
+      return () => clearInterval(interval);
     }
   }, [revealCards]);
 
