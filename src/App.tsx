@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { MenuNavigation, Home, TicTacToe, Hangman, Memory } from "./pages";
+import { MenuNavigation, Home, TicTacToe, Hangman, MemoryGame } from "./pages";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Hangman" element={<Hangman />} />
         <Route path="/TicTacToe" element={<TicTacToe />} />
-        <Route path="/Memory" element={<Memory />} />
+        <Route path="/Memory" element={<MemoryGame />} />
       </Routes>
     </Router>
   );

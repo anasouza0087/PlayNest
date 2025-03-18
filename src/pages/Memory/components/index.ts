@@ -1,1 +1,2 @@
-export * from "./Cards";
+export * from "./MemoryGameBoard";
+export * from "./BoardButtons";
