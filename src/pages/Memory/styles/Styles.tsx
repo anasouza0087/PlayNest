@@ -30,7 +30,7 @@ export const CardsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-export const CardGame = styled.div`
+export const CardGame = styled.div<{ disabled?: boolean }>`
   background-color: #a7c4bc;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   width: 30%;
@@ -40,7 +40,7 @@ export const CardGame = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "" : "pointer")};
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -61,7 +61,6 @@ export const BoardButton = styled.button`
   align-items: center;
   font-size: 22px;
   color: #fff;
-  margin-bottom: 12px;
   padding: 14px;
   background-color: #ff2600;
   cursor: pointer;
@@ -73,5 +72,25 @@ export const BoardButton = styled.button`
     min-width: 160px;
     min-height: 60px;
     font-size: 24px;
+    margin-right: 8px;
   }
+`;
+
+export const CardTitle = styled.b`
+  font-size: 14px;
+`;
+
+export const CounterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px;
+  height: fit-content;
+  margin-bottom: 14px;
+  padding: 8px;
+`;
+
+export const GameCounter = styled.b`
+  font-size: 40px;
 `;

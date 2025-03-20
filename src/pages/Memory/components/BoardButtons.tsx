@@ -3,7 +3,8 @@ import { BoardButton } from "../styles";
 import { IGameStatusEnum } from "../types";
 
 export const BoardButtons = () => {
-  const { setGameStatus, gameStatus, onStartGame } = useMemoryGameContext();
+  const { setGameStatus, gameStatus, onStartCounter, setCardsSelecteds } =
+    useMemoryGameContext();
   return (
     <>
       {[
@@ -13,7 +14,8 @@ export const BoardButtons = () => {
       ].includes(gameStatus) && (
         <BoardButton
           onClick={() => {
-            onStartGame();
+            setGameStatus(IGameStatusEnum.Starting);
+            onStartCounter();
           }}
         >
           Start Game!
@@ -25,7 +27,12 @@ export const BoardButtons = () => {
         IGameStatusEnum.GameOver,
         IGameStatusEnum.Resetting,
       ].includes(gameStatus) && (
-        <BoardButton onClick={() => setGameStatus(IGameStatusEnum.Resetting)}>
+        <BoardButton
+          onClick={() => {
+            setGameStatus(IGameStatusEnum.Resetting);
+            setCardsSelecteds([]);
+          }}
+        >
           Finish Game
         </BoardButton>
       )}

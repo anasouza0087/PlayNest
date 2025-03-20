@@ -6,6 +6,7 @@ export interface ICardsInformationType {
 
 export enum IGameStatusEnum {
   Idle = "idle",
+  Starting = "starting",
   Playing = "playing",
   Flipping = "flipping",
   Checking = "checking",

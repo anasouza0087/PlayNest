@@ -8,8 +8,12 @@ interface IMemoryGameContextType {
   setRevealCards: React.Dispatch<React.SetStateAction<boolean>>;
   gameStatus: IGameStatusEnum;
   setGameStatus: React.Dispatch<React.SetStateAction<IGameStatusEnum>>;
-  onStartGame: () => void;
-  shuffledCards: ICardsInformationType[];
+  onStartCounter: () => void;
+  shuffledCards: any[];
+  counter: number;
+  onCardClick: (cardInfo: ICardsInformationType, idx: number) => void;
+  cardsSelecteds: string[];
+  setCardsSelecteds: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 // Create the context with an explicit type
@@ -30,7 +34,11 @@ export const MemoryGameContextProvider = ({
     shuffledCards,
     gameStatus,
     setGameStatus,
-    onStartGame,
+    onStartCounter,
+    counter,
+    onCardClick,
+    cardsSelecteds,
+    setCardsSelecteds,
   } = useMemoryGame();
 
   return (
@@ -41,7 +49,11 @@ export const MemoryGameContextProvider = ({
         shuffledCards,
         gameStatus,
         setGameStatus,
-        onStartGame,
+        onStartCounter,
+        counter,
+        onCardClick,
+        cardsSelecteds,
+        setCardsSelecteds,
       }}
     >
       {children}
